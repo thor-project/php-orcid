@@ -1,0 +1,19 @@
+Copyright (C) by PANGAEA. All rights reserved.
+
+Author: 
+	Uwe Schindler
+	Markus Stocker
+Email:
+	uschindler@marum.de
+	mstocker@marum.de
+Web:
+	http://pangaea.de
+	http://marum.de
+Twitter:
+	@thetaph1 @envinf
+Address:
+	MARUM/PANGAEA
+	Universität Bremen
+	Postfach 33 04 40
+	28334 Bremen
+	Germany
