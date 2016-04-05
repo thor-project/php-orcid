@@ -44,11 +44,10 @@ obtains the ORCID iD and name of the user.
 
     $client = new ORCID($config['clientId'], $config['clientSecret']);
     $response = $client->requestTokenForCode($_GET['code']);
-    $orcid = $response->{'orcid'};
     
     echo 'Token: ' . $response->{'access_token'} . '<br/>';
     echo 'Name: ' . $response->{'name'} . '<br/>';
-    echo 'ORCID: ' . $orcid . '<br/>';
+    echo 'ORCID: ' . $response->{'orcid'} . '<br/>';
 
 Tests
 -----
