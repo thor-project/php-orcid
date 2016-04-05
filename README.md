@@ -38,19 +38,19 @@ The file `index.php` uses the `php-orcid` library and provides example usage
 code. The example demonstrates authorization and token request. The ORCID iD of
 the authorized user is returned.
 
+Having authorized a user, a client can exchange the authorization `code` 
+returned by ORCID with an `access token`. With this request, the client also 
+obtains the ORCID iD and name of the user.
+
+    $client = new ORCID($config['clientId'], $config['clientSecret']);
+    $response = $client->requestTokenForCode($_GET['code']);
+    $orcid = $response->{'orcid'};
+    
+    echo 'Token: ' . $response->{'access_token'} . '<br/>';
+    echo 'Name: ' . $response->{'name'} . '<br/>';
+    echo 'ORCID: ' . $orcid . '<br/>';
+
 Tests
 -----
 
     phpunit tests/ORCIDTest
-
-Token
------
-
-Having authorized a user, a client can exchange the `code` returned by ORCID 
-with an `access token`. With this request, the client also obtains the ORCID
-iD of the user.
-
-    $orcid = new ORCID($config['clientId'], $config['clientSecret']);
-    $response = $orcid->getToken($_GET['code']);
-
-    echo 'ORCID: ' . $response->orcid;
