@@ -24,6 +24,7 @@ if (isset($_GET['signin'])) {
 			array(
 				'response_type' => 'code',
 				'scope' => '/authenticate',
+				'show_login' => 'true',
            		'client_id' => $config['clientId'],
            		'redirect_uri' => $config['redirectUri']
     		)
