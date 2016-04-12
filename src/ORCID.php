@@ -57,7 +57,9 @@ class ORCID {
 				'client_id' => $this->clientId,
 		        'client_secret' => $this->clientSecret,
 		        'grant_type' => 'authorization_code',
-		        'redirect_uri' => $this->redirectUri . '&code=' . $authorizationCode));
+		        'redirect_uri' => $this->redirectUri,
+				'code' => $authorizationCode
+		));
 	}
 	
 	public function requestOrcidBio($orcid) {
@@ -87,7 +89,7 @@ class ORCID {
 		curl_setopt($curl, CURLOPT_HEADER, false);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($curl, CURLOPT_POST, true);
-		curl_setopt($curl, CURLOPT_POSTFIELDS, rawurldecode(http_build_query($params)));
+		curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($params));
 			
 		$response = json_decode(curl_exec($curl));
 			
